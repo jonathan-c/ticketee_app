@@ -33,3 +33,15 @@ Then /^I should be told that the name is required$/ do
   page.should have_content("Name can't be blank")
 end
 
+Given /^there is a project called "(.*?)"$/ do |name|
+  FactoryGirl.create(:project, name: name)
+end
+
+When /^I follow "(.*?)"$/ do |page|
+  click_link(page)
+end
+
+Then /^I should be on the project page for "(.*?)"$/ do |page|
+  current_path.should == project_path(Project.find_by_name!(page))
+end
+

@@ -7,4 +7,5 @@ Feature: Create projects
 		Given I am on the homepage
 		When I navigate to the new project creation page
 		And I create a new project
-		Then I should be shown the project created verification messsage
+		Then I should be shown the project created verification message 
+		And I should be on the project page for the new project

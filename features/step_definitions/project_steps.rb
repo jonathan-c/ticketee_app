@@ -45,3 +45,14 @@ Then /^I should be on the project page for "(.*?)"$/ do |page|
   current_path.should == project_path(Project.find_by_name!(page))
 end
 
+When /^I fill in "(.*?)" with "(.*?)"$/ do |name, project|
+  fill_in(name, with: project)
+end
+
+When /^I press "(.*?)"$/ do |update|
+  click_button(update)
+end
+
+Then /^I should see "(.*?)"$/ do |success|
+  page.should have_content(success)
+end

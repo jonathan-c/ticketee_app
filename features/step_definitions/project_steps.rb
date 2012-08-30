@@ -56,3 +56,7 @@ end
 Then /^I should see "(.*?)"$/ do |success|
   page.should have_content(success)
 end
+
+Then /^I should not see "(.*?)"$/ do |name|
+  page.should_not have_content(name)
+end
